@@ -1,0 +1,20 @@
+version: '3'
+services:
+  profile_page:
+    build:
+      context: ./profile_page
+    ports:
+      - "80:80"    # ใช้พอร์ต 80 สำหรับหน้าโปรไฟล์
+    networks:
+      - webnet
+
+  research_page:
+    build:
+      context: ./research_page
+    ports:
+      - "8000:80"  # ใช้พอร์ต 8000 สำหรับหน้า Research
+    networks:
+      - webnet
+
+networks:
+  webnet:
